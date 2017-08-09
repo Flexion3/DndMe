@@ -1,0 +1,22 @@
+<button
+  id="btn_continue"
+  *ngIf="selectedClass"
+  (click)="onSaveClass()"
+  class="btn continue">
+  Continue as a {{selectedClass.name}}
+</button>
+<div class="row">
+  <div class="col-md-2">
+      <ul class="nav nav-sidebar">
+        <li
+          *ngFor="let dndclass of classes"
+          [class.active] = "selectedClass && dndclass.name === selectedClass.name"
+          (click)="onSelect(dndclass)">
+          <a>{{dndclass.name}}</a>
+        </li>
+      </ul>
+  </div>
+  <div class="col-md-10" >
+    <app-class-details [dndclass]="selectedClass" ></app-class-details>
+  </div>
+</div>

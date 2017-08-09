@@ -1,0 +1,28 @@
+<div class="line-wrapper">
+  <div class="line"></div>
+  <div class="container">
+    <div class="wizard-container">
+      <div class="wizard-item " *ngFor="let item of wizardItems">
+        <div
+          (click)="onStepClick(item)"
+          [class.done] = "item.step < currentItem.step"
+          class="wizard-item-step full-circle">
+          <span #span *ngIf="item.step < currentItem.step == true" class="glyphicon glyphicon-ok"></span>
+          <span #span *ngIf="item.step < currentItem.step == false" class="glyphicon glyphicon-remove"> </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="wizard-container">
+    <div class="wizard-item " *ngFor="let item of wizardItems">
+      <div>
+        {{item.name}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-classes  *ngIf="currentItem.step === 1" (classSave)="saveClass($event)"  id="comp_classes" [selectedClass]="currentClass"></app-classes>
+<app-races *ngIf="currentItem.step === 2" id="comp_races" ></app-races>

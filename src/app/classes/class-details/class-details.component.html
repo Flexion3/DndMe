@@ -1,4 +1,4 @@
-<div *ngIf="dndclass">
+<div *ngIf="dndclass; else select ">
   <div class="row">
     <h1 id="classname" class="page-header">{{dndclass.name}}</h1>
   </div>
@@ -81,3 +81,9 @@
 
 
 </div>
+
+<ng-template #select >
+<div id="selectClass" class="alert alert-info">
+  Please select a class
+</div>
+</ng-template>

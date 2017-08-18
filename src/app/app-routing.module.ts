@@ -5,7 +5,7 @@ import {RacesComponent} from './races/races.component';
 import {WizardComponent} from './wizard/wizard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full'},
+  { path: '', redirectTo: 'wizard', pathMatch: 'full'},
   { path: 'classes', component: ClassesComponent},
   { path: 'races', component: RacesComponent},
   { path: 'wizard', component: WizardComponent}

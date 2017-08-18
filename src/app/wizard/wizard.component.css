@@ -3,60 +3,82 @@
   justify-content: center;
   align-items: center;
   position: relative;
+
 }
 .line{
   width: 100%;
-  height: 2px;
-  background-color: #222222;
+  height: 3px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 1rem var(--color-grey);
   z-index: -1;
   margin: 0;
   position: absolute;
 }
-.wizard-container {
-  display: flex;
-  flex-direction: row;
+
+
+.continue{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
 }
 
-.wizard-container .wizard-item{
-  margin: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-  flex-shrink: 5 ;
+.disable{
+  color: var(--color-grey)
 }
 
-.wizard-container .wizard-item {
-  width:70px;
-  align-items: center;
+.wizard-item {
   text-align: center;
-
-}
-
-.wizard-container .wizard-item .wizard-item-step {
-  color: white;
-  align-items: center;
   display: flex;
+
   justify-content: center;
+  align-items: center;
 }
 
 .full-circle {
-  background-color: #9C5753;
   height: 50px;
   -moz-border-radius:75px;
   -webkit-border-radius: 75px;
   width: 50px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  box-shadow: 0 0 1rem var(--color-prim-shade);
+  border: 2px solid var(--color-white);
 }
 
-.done{
-  background-color: #539C6F;
+.wizard-name{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  color: var(--color-prim-shade);
 }
 
-.full-circle:hover{
-  background-color: #9C5753;
+div .glyphicon-map-marker{
+  background-color: var(--color-strong);
+}
+
+div .glyphicon-ok{
+  background-color: var(--color-prim);
+  cursor: pointer;
+}
+
+div .glyphicon-remove{
+  background-color: var(--color-sec);
+}
+
+
+.full-circle,.glyphicon-ok:hover{
+  transition: all .07s ease;
+  box-shadow: #9C5753;
+  height: 70px;
+  width: 70px;
 }
 
 
@@ -67,3 +89,22 @@
   -webkit-border-radius: 75px;
   width: 50px;
 }
+
+.sidebar{
+  margin-top: 20px;
+  padding-top: 10px;
+  border-radius: 4px;
+  background-color: var(--color-white);
+  box-shadow: 5px 10px 0px var(--color-prim-shade) ;
+  color: var(--color-grey);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.content{
+  margin-top: 20px;
+  border-radius: 4px;
+  padding-right: 0;
+}
+
+

@@ -11,6 +11,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ClassDetailsComponent } from './classes/class-details/class-details.component';
 import { WizardComponent } from './wizard/wizard.component';
 import {AlertModule} from 'ngx-bootstrap';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {AlertModule} from 'ngx-bootstrap';
     RacesComponent,
     NavbarComponent,
     ClassDetailsComponent,
-    WizardComponent
+    WizardComponent,
+    SidebarComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

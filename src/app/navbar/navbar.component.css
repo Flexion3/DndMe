@@ -1,5 +1,16 @@
 .banner {
-  background: #537c6f;
+  background: var(--color-white);
+  border: none;
+  border-radius: 0px 0px;
+  padding: 10px;
+  font-weight: bold;
 }
 
+.navbar-brand{
+  color: var(--color-prim);
+}
 
+.navbar-brand:hover{
+  color: var(--color-strong);
+  font-weight: bolder;
+}

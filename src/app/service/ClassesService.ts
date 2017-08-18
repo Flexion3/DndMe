@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {variable} from '@angular/compiler/src/output/output_ast';
+import {Http, RequestOptions} from '@angular/http';
 
-const endpoint = 'http://www.dnd5eapi.co/api/classes';
+const endpoint = 'http://localhost:8090/classes';
 
 @Injectable()
 export class ClassesService {
@@ -10,7 +11,11 @@ export class ClassesService {
     const dndclasses = [];
     fetch(endpoint)
       .then(blob => blob.json())
-      .then((value) => dndclasses.push(...value.results));
+      .then((value) => {
+          dndclasses.push(...value);
+        }
+      )
+      .catch(error => console.log(error));
     return dndclasses;
   }
 

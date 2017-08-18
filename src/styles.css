@@ -1,10 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
-
-body{
-  margin: 0;
+:root {
+  --color-prim: #88C3CC;
+  --color-sec: #5D9199;
+  --color-strong: #A3E3ED;
+  --color-soft: #E8F5F7;
+  --color-prim-shade: #BEDEE3;
+  --color-sec-shade: #A6C3C7;
+  --color-strong-shade: #CCEFF5;
+  --color-soft-shade: #F2F9FA;
+  --color-white: #F2F9FA;
+  --color-grey: #939A9B;
+  --color-black: #394648;
 }
 
-.wrapper{
+
+#myBody{
+  margin: 0;
+  background-color: var(--color-sec);
+  color: var(--color-white);
+}
+
+.card{
+  background-color: var(--color-white);
+  box-shadow: 5px 5px 0px var(--color-prim-shade) ;
+  color: var(--color-grey);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.disable {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
 }
 
 .sidebar{
@@ -12,4 +39,5 @@ body{
 
 .content{
 }
+
 

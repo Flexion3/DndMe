@@ -1,0 +1,8 @@
+  <ul class="nav nav-sidebar" id="mySidebar">
+    <li
+      *ngFor="let item of items"
+      [class.active] = "selectedItem && item.name === selectedItem.name"
+      (click)="onSelect(item)">
+      <a class="sidebar_item">{{item.name}}</a>
+    </li>
+  </ul>

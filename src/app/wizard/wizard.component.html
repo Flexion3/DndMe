@@ -1,26 +1,36 @@
-<div class="line-wrapper">
-  <div class="line"></div>
-  <div class="container">
-    <div class="wizard-container">
-      <div class="wizard-item " *ngFor="let item of wizardItems">
-        <div
-          (click)="onStepClick(item)"
-          [class.done] = "item.step < currentItem.step"
-          class="wizard-item-step full-circle">
-          <span #span *ngIf="item.step < currentItem.step == true" class="glyphicon glyphicon-ok"></span>
-          <span #span *ngIf="item.step < currentItem.step == false" class="glyphicon glyphicon-remove"> </span>
-        </div>
+<div class="container">
+  <div class="row line-wrapper">
+    <div class="line"></div>
+    <div *ngFor="let item of wizardItems"
+         class="col-xs-4 wizard-item ">
+      <div
+        (click)="onStepClick(item)"
+        [ngClass]="item.step === currentWizardItem.step ? 'glyphicon-map-marker' : (item.step < currentWizardItem.step ? 'glyphicon-ok' :'glyphicon-remove')"
+        class="full-circle glyphicon">
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="wizard-container">
-    <div class="wizard-item " *ngFor="let item of wizardItems">
-        {{item.name}}
+  <div class="row">
+    <div *ngFor="let item of wizardItems" class="col-xs-4 wizard-item wizard-name">
+      {{item.name.toUpperCase()}}
     </div>
   </div>
 </div>
 
-<app-classes  *ngIf="currentItem.step === 1" (classSave)="saveClass($event)"  id="comp_classes" [selectedClass]="currentClass"></app-classes>
-<app-races *ngIf="currentItem.step === 2" id="comp_races" ></app-races>
+<div class="container">
+  <button
+    id="btn_continue"
+    *ngIf="currentItem"
+    (click)="saveClass()"
+    class="btn continue card">
+    Continue as a {{currentItem.name}}
+  </button>
+  <button
+    *ngIf="!currentItem"
+    class="btn continue card disable">
+    Continue
+  </button>
+
+<app-sidebar class="col-md-3 sidebar" [items]="contentItems"  (itemSelectEvent)="selectItem($event)"></app-sidebar>
+<app-content class="col-md-9 content" [item]="currentItem"></app-content>
+</div>
